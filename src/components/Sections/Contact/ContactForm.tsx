@@ -1,4 +1,7 @@
 import {FC, memo, useCallback, useMemo, useState} from 'react';
+// import sendgrid from '@sendgrid/mail';
+
+// sendgrid.setApiKey(process.env.REACT_APP_SENDGRID_API_KEY);
 
 interface FormData {
   name: string;
@@ -32,16 +35,29 @@ const ContactForm: FC = memo(() => {
   const handleSendMessage = useCallback(
     async (event: React.FormEvent<HTMLFormElement>) => {
       event.preventDefault();
-      /**
-       * This is a good starting point to wire up your form submission logic
-       * */
+      // const emailData = {
+      //   to: 'your-email@example.com', // Replace with your email address
+      //   from: data['email'],
+      //   subject: `New message from ${data['name']}`,
+      //   text: data['message'],
+      // };
+
+      // try {
+      //   await sendgrid.send(emailData);
+      //   alert('Email sent successfully!');
+      //   // Clear form fields
+      //   setData(defaultData);
+      // } catch (error) {
+      //   console.error('Error sending email:', error);
+      //   alert('An error occurred while sending the email. Please try again later.');
+      // }
       console.log('Data to send: ', data);
     },
     [data],
   );
 
   const inputClasses =
-    'bg-sky-700 border-0 focus:border-0 focus:outline-none focus:ring-1 focus:ring-orange-600 rounded-md placeholder:text-neutral-400 placeholder:text-sm text-neutral-200 text-sm';
+    'bg-cyan-600 border-0 focus:border-0 focus:outline-none focus:ring-1 focus:ring-orange-600 rounded-md placeholder:text-neutral-200 placeholder:text-sm text-neutral-100 text-sm';
 
   return (
     <form className="grid min-h-[320px] grid-cols-1 gap-y-4" method="POST" onSubmit={handleSendMessage}>
@@ -66,7 +82,7 @@ const ContactForm: FC = memo(() => {
       />
       <button
         aria-label="Submit contact form"
-        className="w-max rounded-full border-2 border-orange-600 bg-sky-700 px-4 py-2 text-sm font-medium text-white shadow-md outline-none hover:bg-sky-800 focus:ring-2 focus:ring-orange-600 focus:ring-offset-2 focus:ring-offset-stone-800"
+        className="w-max rounded-full bg-cyan-600 px-4 py-2 text-sm font-medium text-white shadow-md outline-none hover:bg-cyan-500 focus:ring-2 focus:ring-orange-600 focus:ring-offset-2 focus:ring-offset-stone-800"
         type="submit">
         Send Message
       </button>
