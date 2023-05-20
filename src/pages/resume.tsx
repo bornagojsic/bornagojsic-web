@@ -1,4 +1,5 @@
-import { FC, memo } from 'react';
+import {FC, memo} from 'react';
+
 import PdfPage from '../components/ResumePage';
 
 const Resume: FC = memo(() => {
