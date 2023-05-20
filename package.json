@@ -12,6 +12,7 @@
     "sitemap": "yarn next-sitemap"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.11.0",
     "@headlessui/react": "^1.7.14",
     "@heroicons/react": "^2.0.17",
     "@sendgrid/mail": "^7.7.0",

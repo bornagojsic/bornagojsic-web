@@ -50,12 +50,12 @@ const ContactForm: FC = memo(() => {
       };
 
       emailjs.send(serviceID, templateID, templateParams, process.env.REACT_APP_KEY)
-        .then((result) => {
+        .then((result : any) => {
             console.log(result.text);
             // reset the form
             if (form.current !== null)
               form.current.reset();
-        }, (error) => {
+        }, (error : any) => {
             console.log(error.text);
       });
 
