@@ -1,7 +1,6 @@
 import {FC, memo, useCallback, useMemo, useState} from 'react';
-// import sendgrid from '@sendgrid/mail';
-
-// sendgrid.setApiKey(process.env.REACT_APP_SENDGRID_API_KEY);
+import emailjs from '@emailjs/browser';
+import React from 'react';
 
 interface FormData {
   name: string;
@@ -21,6 +20,8 @@ const ContactForm: FC = memo(() => {
 
   const [data, setData] = useState<FormData>(defaultData);
 
+  const form = useMemo(() => React.createRef<HTMLFormElement>(), []);
+
   const onChange = useCallback(
     <T extends HTMLInputElement | HTMLTextAreaElement>(event: React.ChangeEvent<T>): void => {
       const {name, value} = event.target;
@@ -35,22 +36,29 @@ const ContactForm: FC = memo(() => {
   const handleSendMessage = useCallback(
     async (event: React.FormEvent<HTMLFormElement>) => {
       event.preventDefault();
-      // const emailData = {
-      //   to: 'your-email@example.com', // Replace with your email address
-      //   from: data['email'],
-      //   subject: `New message from ${data['name']}`,
-      //   text: data['message'],
-      // };
 
-      // try {
-      //   await sendgrid.send(emailData);
-      //   alert('Email sent successfully!');
-      //   // Clear form fields
-      //   setData(defaultData);
-      // } catch (error) {
-      //   console.error('Error sending email:', error);
-      //   alert('An error occurred while sending the email. Please try again later.');
-      // }
+      const serviceID = 'service_web_portfolio';
+      const templateID = 'template_9dxph42';
+      // const userID = ;
+
+      // console.log(userID);
+
+      const templateParams = {
+        user_name: data.name,
+        user_email: data.email,
+        message: data.message,
+      };
+
+      emailjs.send(serviceID, templateID, templateParams, process.env.REACT_APP_KEY)
+        .then((result) => {
+            console.log(result.text);
+            // reset the form
+            if (form.current !== null)
+              form.current.reset();
+        }, (error) => {
+            console.log(error.text);
+      });
+
       console.log('Data to send: ', data);
     },
     [data],
@@ -60,7 +68,7 @@ const ContactForm: FC = memo(() => {
     'bg-cyan-600 border-0 focus:border-0 focus:outline-none focus:ring-1 focus:ring-orange-600 rounded-md placeholder:text-neutral-200 placeholder:text-sm text-neutral-100 text-sm';
 
   return (
-    <form className="grid min-h-[320px] grid-cols-1 gap-y-4" method="POST" onSubmit={handleSendMessage}>
+    <form className="grid min-h-[320px] grid-cols-1 gap-y-4" method="POST" onSubmit={handleSendMessage} ref={form}>
       <input className={inputClasses} name="name" onChange={onChange} placeholder="Name" required type="text" />
       <input
         autoComplete="email"
