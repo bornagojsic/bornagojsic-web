@@ -17,6 +17,10 @@ module.exports = {
         userAgent: '*',
         allow: '/',
       },
+      // {
+      //   userAgent: '*',
+      //   allow: '/resume',
+      // },
       {
         userAgent: '*',
         disallow: ['/404', '/500'],
