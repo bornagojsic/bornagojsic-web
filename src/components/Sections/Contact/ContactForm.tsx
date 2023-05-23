@@ -1,4 +1,4 @@
-import React, {FC, memo, useCallback, useMemo, useState} from 'react';
+import React, { FC, memo, useCallback, useMemo, useState } from 'react';
 import emailjs from '@emailjs/browser';
 
 interface FormData {
@@ -23,11 +23,11 @@ const ContactForm: FC = memo(() => {
 
   const onChange = useCallback(
     <T extends HTMLInputElement | HTMLTextAreaElement>(event: React.ChangeEvent<T>): void => {
-      const {name, value} = event.target;
+      const { name, value } = event.target;
 
-      const fieldData: Partial<FormData> = {[name]: value};
+      const fieldData: Partial<FormData> = { [name]: value };
 
-      setData({...data, ...fieldData});
+      setData({ ...data, ...fieldData });
     },
     [data],
   );
@@ -49,14 +49,14 @@ const ContactForm: FC = memo(() => {
       };
 
       emailjs.send(serviceID, templateID, templateParams, userID)
-        .then((result : any) => {
-            console.log(result.text);
-            // reset the form
-            if (form.current !== null)
-              form.current.reset();
-        }, (error : any) => {
-            console.log(error.text);
-      });
+        .then((result: any) => {
+          console.log(result.text);
+          // reset the form
+          if (form.current !== null)
+            form.current.reset();
+        }, (error: any) => {
+          console.log(error.text);
+        });
 
       console.log('Data to send: ', data);
     },
