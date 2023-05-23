@@ -256,19 +256,19 @@ export const testimonial: TestimonialSection = {
  */
 
 export const contact: ContactSection = {
-  headerText: 'Get in touch.',
-  description: 'Here is a good spot for a message to your readers to let them know how best to reach out to you.',
+  headerText: 'Contact',
+  description: 'Here are some other ways you can reach me.',
   items: [
     {
       type: ContactType.Email,
       text: 'bornagojsic@gmail.com',
       href: 'mailto:bornagojsic@gmail.com',
     },
-    {
-      type: ContactType.Location,
-      text: 'Zagreb, Croatia',
-      href: 'https://www.google.com/maps/place/Zagreb/@45.8403167,15.7995223,11z/',
-    },
+    // {
+    //   type: ContactType.Location,
+    //   text: 'Zagreb, Croatia',
+    //   href: 'https://www.google.com/maps/place/Zagreb/@45.8403167,15.7995223,11z/',
+    // },
     {
       type: ContactType.Instagram,
       text: '@bornagojsic',
