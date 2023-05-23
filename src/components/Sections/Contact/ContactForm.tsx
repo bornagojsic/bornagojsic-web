@@ -1,5 +1,5 @@
 import React, {FC, memo, useCallback, useMemo, useState} from 'react';
-import emailjs from '@emailjs/browser';
+// import emailjs from '@emailjs/browser';
 
 interface FormData {
   name: string;
@@ -36,27 +36,27 @@ const ContactForm: FC = memo(() => {
     async (event: React.FormEvent<HTMLFormElement>) => {
       event.preventDefault();
 
-      const serviceID = 'service_web_portfolio';
-      const templateID = 'template_9dxph42';
-      const userID = process.env.REACT_APP_KEY;
+      // const serviceID = 'service_web_portfolio';
+      // const templateID = 'template_9dxph42';
+      // const userID = process.env.REACT_APP_KEY;
 
-      console.log(userID);
+      // console.log(userID);
 
-      const templateParams = {
-        user_name: data.name,
-        user_email: data.email,
-        message: data.message,
-      };
+      // const templateParams = {
+      //   user_name: data.name,
+      //   user_email: data.email,
+      //   message: data.message,
+      // };
 
-      emailjs.send(serviceID, templateID, templateParams, userID)
-        .then((result : any) => {
-            console.log(result.text);
-            // reset the form
-            if (form.current !== null)
-              form.current.reset();
-        }, (error : any) => {
-            console.log(error.text);
-      });
+      // emailjs.send(serviceID, templateID, templateParams, userID)
+      //   .then((result : any) => {
+      //       console.log(result.text);
+      //       // reset the form
+      //       if (form.current !== null)
+      //         form.current.reset();
+      //   }, (error : any) => {
+      //       console.log(error.text);
+      // });
 
       console.log('Data to send: ', data);
     },
