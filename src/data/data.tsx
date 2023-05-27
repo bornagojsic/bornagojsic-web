@@ -163,7 +163,7 @@ export const portfolioItems: PortfolioItem[] = [
   },
   {
     title: 'Scotland Yard Python AI',
-    description: 'This is currenty just a command line app for playing Scotland Yard against an AI, but there are plans to make it into a React App like the UTTT one. This project was made in collaboration with Ivan Bevanda.',
+    description: 'This is currenty just a command line app for playing Scotland Yard against an AI, but there is a React App like the UTTT one under development. This project was made in collaboration with Ivan Bevanda.',
     url: 'https://github.com/bornagojsic/skotski-vrt',
     image: porfolioImage4,
   },
