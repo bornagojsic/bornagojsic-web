@@ -16,6 +16,7 @@ import porfolioImage1 from '../images/portfolio/portfolio-1.jpg';
 import porfolioImage2 from '../images/portfolio/portfolio-2.jpg';
 import porfolioImage3 from '../images/portfolio/portfolio-3.jpg';
 import porfolioImage4 from '../images/portfolio/portfolio-4.jpg';
+import porfolioImage5 from '../images/portfolio/portfolio-5.jpg';
 import profilepic from '../images/profilepic.jpg';
 import testimonialImage from '../images/testimonial.webp';
 import {
@@ -167,12 +168,12 @@ export const portfolioItems: PortfolioItem[] = [
     url: 'https://github.com/bornagojsic/skotski-vrt',
     image: porfolioImage4,
   },
-  // {
-  //   title: 'Project title 5',
-  //   description: 'Give a short description of your project here.',
-  //   url: 'https://timbaker.me',
-  //   image: porfolioImage5,
-  // },
+  {
+    title: 'Scotland Yard React App',
+    description: 'This is the current react app for playing against the Scotland Yard Python MCTS AI, but it is still under development.',
+    url: 'https://scotland-yard-react.vercel.app/',
+    image: porfolioImage5,
+  },
   // {
   //   title: 'Project title 6',
   //   description: 'Give a short description of your project here.',
