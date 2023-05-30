@@ -171,7 +171,7 @@ export const portfolioItems: PortfolioItem[] = [
   {
     title: 'Scotland Yard React App',
     description: 'This is the current react app for playing against the Scotland Yard Python MCTS AI, but it is still under development.',
-    url: 'https://scotland-yard-react.vercel.app/',
+    url: 'https://scotland-yard-game.vercel.app/',
     image: porfolioImage5,
   },
   // {
