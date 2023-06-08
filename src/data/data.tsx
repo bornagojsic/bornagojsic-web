@@ -65,7 +65,7 @@ export const heroData: Hero = {
   description: (
     <>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        I'm a 1st year student student at the Faculty of Electrical Engineering and Computing in Zagreb (<strong className="text-stone-100">FER</strong>) and a software developer.
+        I'm a 1st year student at the Faculty of Electrical Engineering and Computing in Zagreb (<strong className="text-stone-100">FER</strong>) and a software developer.
       </p>
     </>
   ),
